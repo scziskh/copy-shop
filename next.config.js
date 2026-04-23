@@ -22,7 +22,6 @@ const nextConfig = {
     },
   },
   compress: false,
-  basePath: "/",
 };
 
 module.exports = withNextIntl(nextConfig);
