@@ -64,15 +64,19 @@ const Wrapper = styled.section`
 
 const Products = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
   gap: 24px;
   margin: 32px 0;
+  align-items: stretch;
+
   @media screen and (max-width: 1280px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 40px;
   }
   @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
 `;

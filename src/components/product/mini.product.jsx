@@ -21,14 +21,10 @@ const MiniProduct = (props) => {
       </ImageContainer>
       <Text onClick={() => router.push(`/${locale}${props.href}`)}>
         <Name>
-          <h3>
-            {props.name}
-          </h3>
+          <h3>{props.name}</h3>
         </Name>
         <Description>
-          <p>
-            {props.description}
-          </p>
+          <p>{props.description}</p>
         </Description>
       </Text>
       <MiniButtonLink link={{ href: props.href, name: props.button }} />
@@ -41,56 +37,82 @@ export default MiniProduct;
 const Wrapper = styled.div`
   width: 100%;
   cursor: pointer;
-`;
-
-const Name = styled.div`
-  overflow: hidden;
-  text-overflow: ellipsis;
-  h3 {
-    overflow: hidden;
-    white-space: nowrap;
-    font-size: 24px;
-    font-weight: 600;
-    word-spacing: 2px;
-    text-overflow: ellipsis;
-  }
-`;
-const Description = styled.div`
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 18px;
-  height: 2.5em;
-  overflow: hidden;
-  p {
-    display: -moz-box;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -moz-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    -moz-line-clamp: 2;
-    overflow: hidden;
-  }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 `;
 
 const Text = styled.div`
   padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+`;
+
+const Name = styled.div`
+  margin-bottom: 8px;
+  height: 1.2em;
+
+  h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+`;
+
+const Description = styled.div`
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4em;
+  height: 2.8em;
+  margin-bottom: 15px;
+  overflow: hidden;
+
+  p {
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 const ImageContainer = styled.div`
   background-color: #efe3e8;
   position: relative;
   cursor: pointer;
-  min-width: 100%;
-  aspect-ratio: 1;
+
+  /* 1. Гарантуємо, що це завжди буде квадрат */
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  /* 2. Забороняємо картинці рости або стискатися, навіть якщо тексту мало/багато */
+  flex-shrink: 0;
+  flex-grow: 0;
+
   overflow: hidden;
   border-radius: 15px;
   filter: grayscale(0.2);
+
+  /* 3. Важливо для компонента Image з fill */
+  display: block;
+
   img {
-    &:hover {
-      scale: 1.02;
-    }
-    transition: all var(--transitionDuration);
+    /* Тут все правильно, але додай width/height 100% для страховки */
+    width: 100% !important;
+    height: 100% !important;
     object-fit: cover;
     object-position: center;
+    transition: all var(--transitionDuration);
+
+    &:hover {
+      transform: scale(1.02); /* scale краще писати через transform */
+    }
   }
 `;
