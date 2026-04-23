@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export const generateMetadata = async () => {
   return {
@@ -17,5 +17,5 @@ export const generateMetadata = async () => {
 };
 
 export default async function RootPage() {
-  redirect("uk");
+  permanentRedirect("/uk");
 }

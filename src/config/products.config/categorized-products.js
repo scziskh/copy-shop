@@ -30,6 +30,7 @@ const categorizedProducts = {
     "certificates",
     "blanks",
     "folders",
+    "hengers",
     "menu",
   ],
   calendars: ["quarterly-calendars", "desktop-calendars", "wall-calendars"],
