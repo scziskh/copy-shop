@@ -22,6 +22,7 @@ const nextConfig = {
     },
   },
   compress: false,
+  basePath: "/copy-shop",
 };
 
 module.exports = withNextIntl(nextConfig);

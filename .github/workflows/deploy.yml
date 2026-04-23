@@ -1,0 +1,32 @@
+name: Build and Deploy to Branch
+
+on:
+  push:
+    branches: ["main"] # Спрацьовує при пуші в main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ⚙️
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install and Build 🏗️
+        run: |
+          npm install
+          npm run build
+        # Переконайся, що в next.config.js стоїть output: 'export'
+
+      - name: Deploy to Branch 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: build # Гілка, куди закидати білд
+          folder: out # Папка, яку копіюємо (Next.js export створює out)
+          clean: true # Видаляти старі файли в цій гілці перед пушем
