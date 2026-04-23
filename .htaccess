@@ -1,60 +1,70 @@
-
 RewriteOptions inherit
-
 RewriteEngine on
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^uk\/categories\/cutting\/$ "https\:\/\/site\.copy\-shop\.ua\/uk\/categories\/marketing\-and\-office\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^ru\/categories\/cutting\/$ "https\:\/\/site\.copy\-shop\.ua\/ru\/categories\/marketing\-and\-office\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^ru\/categories\/single\-letter\/$ "https\:\/\/site\.copy\-shop\.ua\/ru\/categories\/marketing\-and\-office\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^uk\/categories\/single\-letter\/$ "https\:\/\/site\.copy\-shop\.ua\/uk\/categories\/marketing\-and\-office\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^uk\/categories\/large\-format\-printing\/$ "https\:\/\/site\.copy\-shop\.ua\/uk\/categories\/large\-format\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^ru\/categories\/large\-format\-printing\/$ "https\:\/\/site\.copy\-shop\.ua\/ru\/categories\/large\-format\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^ru\/categories\/envelops\/$ "https\:\/\/site\.copy\-shop\.ua\/ru\/categories\/invitations\-and\-envelopes" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^uk\/categories\/envelops\/$ "https\:\/\/site\.copy\-shop\.ua\/uk\/categories\/invitations\-and\-envelopes" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^uk\/categories\/stickers\/$ "https\:\/\/site\.copy\-shop\.ua\/uk\/categories\/stickers\-and\-labels\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^ru\/categories\/stickers\/$ "https\:\/\/site\.copy\-shop\.ua\/ru\/categories\/stickers\-and\-labels\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^ru\/categories\/books\/$ "https\:\/\/site\.copy\-shop\.ua\/ru\/categories\/multipage\-printing\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^uk\/categories\/books\/$ "https\:\/\/site\.copy\-shop\.ua\/uk\/categories\/multipage\-printing\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^uk\/categories\/constructions\/$ "https\:\/\/site\.copy\-shop\.ua\/uk\/categories\/pos\-materials\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^ru\/categories\/constructions\/$ "https\:\/\/site\.copy\-shop\.ua\/ru\/categories\/pos\-materials\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^ru\/categories\/suvenir\/$ "https\:\/\/site\.copy\-shop\.ua\/ru\/categories\/clothes\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
-RewriteRule ^uk\/categories\/suvenir\/$ "https\:\/\/site\.copy\-shop\.ua\/uk\/categories\/clothes\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^.*$
-RewriteRule ^product\/?(.*)$ "https\:\/\/site\.copy\-shop\.ua\/uk\/product\/$1" [R=301,L]
-RewriteCond %{HTTP_HOST} ^.*$
-RewriteRule ^uk\/product\/$ "https\:\/\/site\.copy\-shop\.ua\/uk\/categories\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^.*$
-RewriteRule ^ru\/product\/$ "https\:\/\/site\.copy\-shop\.ua\/ru\/categories\/" [R=301,L]
 
+# Force trailing slash
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ $1/ [R=301,L]
+
+# Category redirects
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^uk/categories/cutting/?$ "https://site.copy-shop.ua/uk/categories/marketing-and-office/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^ru/categories/cutting/?$ "https://site.copy-shop.ua/ru/categories/marketing-and-office/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^uk/categories/single-letter/?$ "https://site.copy-shop.ua/uk/categories/marketing-and-office/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^ru/categories/single-letter/?$ "https://site.copy-shop.ua/ru/categories/marketing-and-office/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^uk/categories/large-format-printing/?$ "https://site.copy-shop.ua/uk/categories/large-format/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^ru/categories/large-format-printing/?$ "https://site.copy-shop.ua/ru/categories/large-format/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^uk/categories/envelops/?$ "https://site.copy-shop.ua/uk/categories/invitations-and-envelopes/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^ru/categories/envelops/?$ "https://site.copy-shop.ua/ru/categories/invitations-and-envelopes/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^uk/categories/stickers/?$ "https://site.copy-shop.ua/uk/categories/stickers-and-labels/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^ru/categories/stickers/?$ "https://site.copy-shop.ua/ru/categories/stickers-and-labels/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^uk/categories/books/?$ "https://site.copy-shop.ua/uk/categories/multipage-printing/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^ru/categories/books/?$ "https://site.copy-shop.ua/ru/categories/multipage-printing/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^uk/categories/constructions/?$ "https://site.copy-shop.ua/uk/categories/pos-materials/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^ru/categories/constructions/?$ "https://site.copy-shop.ua/ru/categories/pos-materials/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^uk/categories/suvenir/?$ "https://site.copy-shop.ua/uk/categories/clothes/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^site\.copy\-shop\.ua$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.site\.copy\-shop\.ua$
+RewriteRule ^ru/categories/suvenir/?$ "https://site.copy-shop.ua/ru/categories/clothes/" [R=301,L]
+
+# Product redirects
+RewriteCond %{HTTP_HOST} ^.*$
+RewriteRule ^product\/?(.*)$ "https://site.copy-shop.ua/uk/product/$1" [R=301,L]
+RewriteRule ^uk/product/?$ "https://site.copy-shop.ua/uk/categories/" [R=301,L]
+RewriteRule ^ru/product/?$ "https://site.copy-shop.ua/ru/categories/" [R=301,L]
+
+# 404 and Static Routing
 ErrorDocument 404 /404.html
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
