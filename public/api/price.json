@@ -1,0 +1,379 @@
+{
+  "FORMAT": {
+    "85x55": 20,
+    "90x50": 24,
+    "Eurobooklet": 6,
+    "Eurobooklet_2": 2,
+    "A3": 1,
+    "A4": 2,
+    "A5": 4,
+    "A6": 8,
+    "A7": 16
+  },
+  "SET": {
+    "85x55": 100,
+    "90x50": 96,
+    "Eurobooklet": 96,
+    "Eurobooklet_2": 100,
+    "A3": 50,
+    "A4": 100,
+    "A5": 100,
+    "A6": 96,
+    "A7": 96
+  },
+  "PAPER": {
+    "80": { "PRICE": 0.027, "THICK": 100 },
+    "130": { "PRICE": 0.05, "THICK": 115 },
+    "150": { "PRICE": 0.06, "THICK": 130 },
+    "170": { "PRICE": 0.07, "THICK": 140 },
+    "200": { "PRICE": 0.075, "THICK": 190 },
+    "250": { "PRICE": 0.1, "THICK": 230 },
+    "300": { "PRICE": 0.115, "THICK": 310 },
+    "120DNS": { "PRICE": 0.1, "THICK": 130 },
+    "160DNS": { "PRICE": 0.11, "THICK": 180 },
+    "300DNS": { "PRICE": 0.31, "THICK": 400 },
+    "400DNS": { "PRICE": 0.47, "THICK": 535 },
+    "FILM": { "PRICE": 0.53, "THICK": 0 },
+    "PAPER": { "PRICE": 0.22, "THICK": 0 }
+  },
+  "WIDE_PAPER": {
+    "140": {
+      "PRICE": 1.4,
+      "SIZES": [610, 914]
+    },
+    "150": {
+      "PRICE": 0.95,
+      "SIZES": [1260, 1600]
+    },
+    "180": {
+      "PRICE": 1.8,
+      "SIZES": [610, 914, 1067, 1270, 1520]
+    },
+    "FILM": {
+      "PRICE": 1.8,
+      "SIZES": [610, 914, 1067, 1270, 1520]
+    },
+    "BANNER_440": {
+      "PRICE": 2.2,
+      "SIZES": [1100, 1370, 1600, 2100, 2500, 3200]
+    },
+    "BANNER_510": {
+      "PRICE": 3.05,
+      "SIZES": [1100, 1370, 1600, 2100, 2500, 3200]
+    }
+  },
+  "PRINTING": {
+    "COLOR": {
+      "PRICE": 0.41,
+      "MIN_PRICE": 0.18,
+      "A": 0.39,
+      "B": 0.11
+    },
+    "GRAYSCALE": {
+      "PRICE": 0.177,
+      "MIN_PRICE": 0.044,
+      "A": 0.194,
+      "B": 0.2013
+    }
+  },
+  "WIDE_PRINTING": {
+    "PRICE": 7.05,
+    "MIN_PRICE": 2.75,
+    "A": 5.95,
+    "B": 0.4
+  },
+  "LUVERS": 0.19,
+  "LAMINATION": {
+    "PREPARATION": 0.88,
+    "1_MATT": {
+      "PRICE": 0.27,
+      "MIN_PRICE": 0.1,
+      "A": 0.277,
+      "B": 0.1799,
+      "THICK": 27
+    },
+    "2_MATT": {
+      "PRICE": 0.333,
+      "MIN_PRICE": 0.156,
+      "A": 0.3473,
+      "B": 0.1443,
+      "THICK": 54
+    },
+    "1_GLOSSY": {
+      "PRICE": 0.2,
+      "MIN_PRICE": 0.1,
+      "A": 0.2826,
+      "B": 0.184,
+      "THICK": 25
+    },
+    "2_GLOSSY": {
+      "PRICE": 0.32,
+      "MIN_PRICE": 0.133,
+      "A": 0.3297,
+      "B": 0.1694,
+      "THICK": 50
+    },
+    "1_VELVET": {
+      "PRICE": 0.5,
+      "MIN_PRICE": 0.25,
+      "A": 0.5423,
+      "B": 0.1825,
+      "THICK": 27
+    },
+    "2_VELVET": {
+      "PRICE": 0.6,
+      "MIN_PRICE": 0.333,
+      "A": 0.5215,
+      "B": 0.1449,
+      "THICK": 54
+    },
+    "2_THICK_MATT": {
+      "PRICE": 0.733,
+      "MIN_PRICE": 0.233,
+      "A": 0.7349,
+      "B": 0.0238,
+      "THICK": 200
+    },
+    "2_THICK_GLOSSY": {
+      "PRICE": 0.444,
+      "MIN_PRICE": 0.378,
+      "A": 0.4428,
+      "B": 0.0414,
+      "THICK": 200
+    }
+  },
+  "TRIM": {
+    "BUSINESS_CARDS": 1.33,
+    "SINGLE_SHEET": 0,
+    "BROSHURES": 0
+  },
+  "FOLDING": {
+    "PREPARATION": 0.66,
+    "FOLDING": 0.03
+  },
+  "ROUND_CORNERS": 0.03,
+  "BOX": {
+    "160": { "PRICE": 20, "MIN_PRICE": 19, "A": 0.25, "B": 20.25 },
+    "200": { "PRICE": 26, "MIN_PRICE": 24.7, "A": 0.325, "B": 26.325 },
+    "250": { "PRICE": 44.75, "MIN_PRICE": 42.65, "A": 0.565, "B": 45.315 }
+  },
+  "PLOTTER_CUTTING": {
+    "DEFAULT": {
+      "MIN_PRICE": 0.15,
+      "PRICE": 0.23,
+      "A": 0.00008,
+      "B": 0.23
+    },
+    "CUTTING": {
+      "MIN_PRICE": 0.055,
+      "PRICE": 0.1,
+      "A": 0.00005,
+      "B": 0.1
+    }
+  },
+  "BINDING": {
+    "STAPLES": {
+      "PREPARATION": 0.45,
+      "A": 1,
+      "B": 1,
+      "SIZES": [
+        {
+          "PRICE": 0.08,
+          "MIN_PRICE": 0.05,
+          "THICK": 2400
+        },
+        {
+          "PRICE": 0.12,
+          "MIN_PRICE": 0.08,
+          "THICK": 4000
+        }
+      ]
+    },
+    "PLASTIC_SPRING": {
+      "PREPARATION": 0,
+      "SIZES": [
+        {
+          "PRICE": 0.65,
+          "MIN_PRICE": 0.5,
+          "THICK": 8000,
+          "A": 0.0015,
+          "B": 0.6215
+        },
+        {
+          "PRICE": 0.8,
+          "MIN_PRICE": 0.6,
+          "THICK": 15000,
+          "A": 0.002,
+          "B": 0.802
+        },
+        {
+          "PRICE": 0.95,
+          "MIN_PRICE": 0.74,
+          "THICK": 21000,
+          "A": 0.002,
+          "B": 0.9502
+        },
+        {
+          "PRICE": 1.23,
+          "MIN_PRICE": 0.95,
+          "THICK": 28000,
+          "A": 0.003,
+          "B": 1.233
+        },
+        {
+          "PRICE": 1.54,
+          "MIN_PRICE": 1.18,
+          "THICK": 41000,
+          "A": 0.0036,
+          "B": 1.5436
+        },
+        {
+          "PRICE": 1.84,
+          "MIN_PRICE": 1.36,
+          "THICK": 50000,
+          "A": 0.005,
+          "B": 1.845
+        }
+      ]
+    },
+    "METAL_SPRING": {
+      "PREPARATION": 0,
+      "SIZES": [
+        {
+          "PRICE": 0.79,
+          "MIN_PRICE": 0.59,
+          "THICK": 7500,
+          "A": 0.002,
+          "B": 0.792
+        },
+        {
+          "PRICE": 0.94,
+          "MIN_PRICE": 0.7,
+          "THICK": 10500,
+          "A": 0.0025,
+          "B": 0.9425
+        },
+        {
+          "PRICE": 1.09,
+          "MIN_PRICE": 0.82,
+          "THICK": 12000,
+          "A": 0.003,
+          "B": 1.093
+        },
+        {
+          "PRICE": 1.25,
+          "MIN_PRICE": 0.93,
+          "THICK": 13500,
+          "A": 0.003,
+          "B": 1.253
+        },
+        {
+          "PRICE": 1.55,
+          "MIN_PRICE": 1.38,
+          "THICK": 22000,
+          "A": 0.0017,
+          "B": 1.5517
+        },
+        {
+          "PRICE": 1.97,
+          "MIN_PRICE": 1.48,
+          "THICK": 28000,
+          "A": 0.005,
+          "B": 1.975
+        }
+      ]
+    },
+    "THERMOBINDER": {
+      "PREPARATION": 3.86,
+      "SIZES": [
+        {
+          "PRICE": 0.2,
+          "MIN_PRICE": 0.18,
+          "THICK": 29000,
+          "A": 0,
+          "B": 0.2
+        }
+      ]
+    },
+    "CANAL": {
+      "PREPARATION": 0,
+      "SIZES": [
+        {
+          "PRICE": 6.8,
+          "MIN_PRICE": 6.8,
+          "THICK": 12000,
+          "A": 0,
+          "B": 6.8
+        },
+        {
+          "PRICE": 7.3,
+          "MIN_PRICE": 7.3,
+          "THICK": 20000,
+          "A": 0,
+          "B": 7.3
+        },
+        {
+          "PRICE": 7.8,
+          "MIN_PRICE": 7.8,
+          "THICK": 3000,
+          "A": 0,
+          "B": 7.8
+        }
+      ]
+    }
+  },
+
+  "LAYOUT": {
+    "STICKERS": 0.778
+  },
+  "SCAN": {
+    "AUTO": {
+      "A4": {
+        "PRICE": 0.144,
+        "MIN_PRICE": 0.022,
+        "A": 0.1307,
+        "B": 0.298
+      },
+      "A3": {
+        "PRICE": 0.1444,
+        "MIN_PRICE": 0.033,
+        "A": 0.1501,
+        "B": 0.2506
+      }
+    },
+    "WIDE_TYPE_1": {
+      "A2": 0.92,
+      "A1": 1.37,
+      "A0": 1.95,
+      "LARGE": 2.06
+    },
+    "WIDE_TYPE_2": {
+      "A2": 1.38,
+      "A1": 2.06,
+      "A0": 3.33,
+      "LARGE": 3.55
+    }
+  },
+  "SILK_SCREEN_PRINTING": {
+    "BUSINESS_CARDS": {
+      "first": 340,
+      "second": 170
+    },
+    "75_150": {
+      "first": 500,
+      "second": 245
+    },
+    "100_210": {
+      "first": 600,
+      "second": 300
+    },
+    "150_250": {
+      "first": 775,
+      "second": 400
+    },
+    "210_300": {
+      "first": 950,
+      "second": 485
+    }
+  }
+}
