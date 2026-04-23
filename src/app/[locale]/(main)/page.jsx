@@ -9,7 +9,7 @@ import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 export const generateMetadata = async ({ params: { locale } }) => {
   const t = await getTranslations({ locale, namespace: "HomePage" });
 
-  const schemaTitle = "Copy Shop™";
+  const schemaTitle = "Copy Shop";
   const seoTitle = t("title");
   const description = t("description");
 
