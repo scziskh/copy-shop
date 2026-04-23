@@ -8,7 +8,7 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   output: "export",
   trailingSlash: true,
-  images: { unoptimized: true }, // Обов'язково для 'export'
+  images: { unoptimized: true },
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
@@ -22,7 +22,7 @@ const nextConfig = {
     },
   },
   compress: false,
-  basePath: "/copy-shop",
+  basePath: "/",
 };
 
 module.exports = withNextIntl(nextConfig);
