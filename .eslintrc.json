@@ -3,6 +3,5 @@
   "plugins": ["json"],
   "rules": {
     "json/*": ["error", "allowComments"]
-  },
-  "ignoreDeprecations": "6.0"
+  }
 }
