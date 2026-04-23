@@ -56,3 +56,5 @@ RewriteCond %{HTTP_HOST} ^.*$
 RewriteRule ^uk\/product\/$ "https\:\/\/site\.copy\-shop\.ua\/uk\/categories\/" [R=301,L]
 RewriteCond %{HTTP_HOST} ^.*$
 RewriteRule ^ru\/product\/$ "https\:\/\/site\.copy\-shop\.ua\/ru\/categories\/" [R=301,L]
+
+ErrorDocument 404 /404.html
