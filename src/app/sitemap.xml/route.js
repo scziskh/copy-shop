@@ -80,7 +80,7 @@ export const GET = () => {
 
   const specials = specialsList.flatMap((service) =>
     locales.map((locale) => ({
-      url: `${baseUrl}/${locale}/services/${service}/`,
+      url: `${baseUrl}/${locale}/specials/${service}/`,
       priority: 0.5,
     })),
   );
