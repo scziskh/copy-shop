@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /uk/order
+Disallow: /ru/order
+Disallow: /uk/order/success
+Disallow: /ru/order/success
+Disallow: /uk/cart
+Disallow: /ru/cart
+Disallow: /uk/fs
+Disallow: /ru/fs
