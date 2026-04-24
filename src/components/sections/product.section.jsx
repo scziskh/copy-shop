@@ -374,8 +374,12 @@ const Wrapper = styled.div`
 
 const MainText = styled.div`
   button {
-    width: 200px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 200px;
+
+    @media screen and (max-width: 480px) {
+      max-width: 100%; /* Кнопка розтягнеться на всю ширину контейнера на телефоні */
+    }
   }
 `;
 
@@ -397,14 +401,24 @@ const Buttons = styled.div`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 32px;
-  width: 440px;
+  width: 100%; /* Гумова ширина замість жорстких 440px */
+  max-width: 440px; /* Обмежуємо максимальну ширину для десктопу */
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: 1fr; /* Кнопки стають одна під одною на малих екранах */
+    gap: 16px;
+  }
 `;
 
 const CalculatorButton = styled.div`
   display: grid;
   grid-template-columns: 24px 1fr;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+
+  a {
+    white-space: nowrap; /* Запобігає розриву тексту "Порахувати онлайн" */
+  }
 `;
 
 const ImagesWrapper = styled.div`

@@ -53,7 +53,7 @@ const FeedbackForm = () => {
             name,
             filePath,
           }),
-        }
+        },
       );
 
       const responseData = await response.json();
@@ -62,7 +62,7 @@ const FeedbackForm = () => {
         setResponseMessage(
           tMailerMessage("success", {
             number: `${responseData["number"]}`,
-          })
+          }),
         );
         setShowResponseMessage(true);
         setIsResponsing(false);
@@ -87,14 +87,14 @@ const FeedbackForm = () => {
         {
           method: "post",
           body: formData,
-        }
+        },
       );
       const responseData = await response.json();
 
       if (responseData["message"] === "OK") {
         setIsResponsing(false);
         setFilePath(
-          `${APIConfig.host}:${APIConfig.port}/uploads/${responseData["filename"]}`
+          `${APIConfig.host}:${APIConfig.port}/uploads/${responseData["filename"]}`,
         );
       }
     } catch (e) {}
@@ -143,31 +143,52 @@ const FeedbackForm = () => {
 };
 
 export default FeedbackForm;
+
 const Form = styled.section`
+  width: 100%;
+  box-sizing: border-box;
+
   form {
+    width: 100%;
     padding: 24px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    box-sizing: border-box;
+
+    /* Примусово застосовуємо правильну блочну модель до всіх елементів форми */
+    * {
+      box-sizing: border-box;
+    }
+
     @media screen and (max-width: 768px) {
       grid-template-columns: 1fr;
     }
-    gap: 24px;
+
     input {
+      width: 100%; /* Додано, щоб інпути займали рівно свою колонку */
       max-width: 100%;
       overflow: hidden;
     }
+
     textarea {
+      width: 100%; /* Додано */
       grid-column-start: 1;
       grid-column-end: 3;
       height: 320px;
-      grid-template-columns: 1fr 1fr;
+      resize: vertical; /* Дозволяє змінювати розмір лише по вертикалі, щоб не ламати сітку */
+
+      /* Видалено grid-template-columns, оскільки textarea не є контейнером */
+
       @media screen and (max-width: 768px) {
         grid-column-start: 1;
-        grid-column-end: 1;
+        grid-column-end: 2; /* Виправлено: у мобільній версії лише 1 колонка, тому end має бути 2 */
       }
     }
+
     button {
       justify-self: end;
+      max-width: 100%; /* Запобігає виходу кнопки за межі екрана */
     }
   }
 `;
